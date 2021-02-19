@@ -1,4 +1,4 @@
-## My Web Application (Title)
+## My Web Application (Good-Cop-Bad-Cop)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
