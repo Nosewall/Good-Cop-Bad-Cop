@@ -13,6 +13,8 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * ...
+
+## Change to test merge nonsense
 	
 ## Content
 Content of the project folder:
