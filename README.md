@@ -2,6 +2,7 @@
 
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Author] (#Club33)
 * [Contents](#content)
 
 ## General Info
