@@ -2,7 +2,7 @@
 
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Author] (#Club33)
+* [Author] (#club33)
 * [Contents](#content)
 
 ## General Info
@@ -14,6 +14,8 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * ...
+
+## Change to test merge nonsense
 	
 ## Content
 Content of the project folder:
