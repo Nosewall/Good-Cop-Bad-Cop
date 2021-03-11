@@ -1,0 +1,24 @@
+#survey-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+#survey-scenario{
+    margin-top: 8vh;
+}
+#survey-feedback{
+    margin-top: 5vh;
+}
+#survey-buttons{
+    margin: auto;
+    margin-top: 12vh;
+    width: 60%;
+    white-space: pre-wrap;
+}
+#grid{
+    height: 5vh;
+}
+#top{
+    height: 5vh;
+}
