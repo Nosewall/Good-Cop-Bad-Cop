@@ -16,6 +16,17 @@
     width: 60%;
     white-space: pre-wrap;
 }
+#survey-nav{
+    margin-top: 12vh;
+}
+#fwd-button{
+    float: right;
+}
+#survey-progress{
+    margin: auto;
+    margin-top: 16vh;
+    width: 50%;
+}
 #grid{
     height: 5vh;
 }
