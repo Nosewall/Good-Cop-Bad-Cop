@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
+  row-gap: 1vh;
   margin-top: 40px;
   margin-left: 50px;
 }

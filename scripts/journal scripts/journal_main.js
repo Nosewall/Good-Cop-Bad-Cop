@@ -11,9 +11,10 @@ function getJournals(){
                 var d = doc.data().date;
                 var j = doc.data().jText;
                 ++count;
+                var maxCharDisplayed = 100;
 
-                if (j.length >= 100){
-                    j = j.substring(0,100) + "...";
+                if (j.length >= maxCharDisplayed){
+                    j = j.substring(0,maxCharDisplayed) + "...";
                 }
 
                 var journalCard = "<a id='journal-" + count + "' "
