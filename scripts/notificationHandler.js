@@ -26,16 +26,20 @@ function getPhrase(trainerName, motivation) {
         .doc(trainerName)
         .get()
         .then(snapshot => {
-            console.log(snapshot.data()[motivation]);
+            phrase = snapshot.data()[motivation];
 
         })
 
-
+    return phrase
 }
 
-// Test function for the snapshot
-// function testSnapShot() {
-//     getPhrase("Decard", "checkIn1");
-// }
-// testSnapShot();
+// Send an alert as a notification
+function sendNotification(trainerName, motivation){
+    phrase = getPhrase(trainerName, motivation);
+    alert(phrase);
+}
+
+function testSnapShot() {
+    getPhrase("Decard", "checkIn1");
+}
 getCoach();
