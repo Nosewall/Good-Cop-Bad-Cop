@@ -18,6 +18,7 @@ function getCoach(){
 
 }
 
+// Get a phrase from the database using the coaches name and the key of the motivation you want to use
 function getPhrase(trainerName, motivation) {
     var phrase;
 
@@ -32,9 +33,9 @@ function getPhrase(trainerName, motivation) {
 
 }
 
-
-function testSnapShot() {
-    getPhrase("Decard", "checkIn1");
-}
-testSnapShot();
+// Test function for the snapshot
+// function testSnapShot() {
+//     getPhrase("Decard", "checkIn1");
+// }
+// testSnapShot();
 getCoach();
