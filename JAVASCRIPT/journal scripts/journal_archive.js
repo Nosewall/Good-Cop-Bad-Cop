@@ -4,7 +4,6 @@ function getJournals(){
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid)
         .collection("journal entries") // grabs journal entries
-        .limit(7) // max 7 per page
         .orderBy("dateValue", "desc") // orders by date
         .get()
         .then(function(snap){
@@ -32,7 +31,7 @@ function getJournals(){
                 + t + "</h5></div><p class='mb-1'>"
                 + j + "</p></a>";
                 // places each new card before archive card
-                $("#go-to-archive").before(journalCard);
+                $("#journal-anchor").before(journalCard);
                 journalListener(id);
 
             })
