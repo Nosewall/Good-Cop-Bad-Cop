@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
+  margin-top: 40px;
+  margin-left: 50px;
 }
 
 .image img {
@@ -20,33 +22,30 @@
 
 .image img {
   width: 100px;
-  margin-top: 20%;
+  height: 100px;
   text-align: center;
   padding: 10px;
-  margin-left: 30%;
 }
 
-.button {
-  width: 80px;
+.button{
+  width: 75px;
   height: 40px;
-  text-align: center;
-  margin: auto;
-  display: flex;
+  margin-left: 120px;
+  margin-top: 60px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: rgb(43, 43, 219);  
+  background-color: rgb(43, 43, 219);
+  text-align: center;
   cursor: pointer;
   border-radius: 2px;
 }
-
-.button:hover {
+.button:hover{
    background-color: #242424;
 }
 .button:active{
    background-color: #121212;
 }
 
-.button > span {
-  color: #eeeeee;
-  text-align: center;
+.button > span{
+  color: #eeeeee
 }
