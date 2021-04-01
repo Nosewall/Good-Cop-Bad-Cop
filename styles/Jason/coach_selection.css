@@ -25,20 +25,22 @@
   height: 100px;
   text-align: center;
   padding: 10px;
+  margin-left: 30%;
 }
 
 .button{
-  width: 75px;
+  width: 80px;
   height: 40px;
-  margin-left: 120px;
-  margin-top: 60px;
+  text-align: center;
+  margin: auto;
+  display: flex;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: rgb(43, 43, 219);
-  text-align: center;
+  background-color: rgb(43, 43, 219);  
   cursor: pointer;
   border-radius: 2px;
 }
+
 .button:hover{
    background-color: #242424;
 }
@@ -47,5 +49,6 @@
 }
 
 .button > span{
-  color: #eeeeee
+  color: #eeeeee;
+  text-align: center;
 }
