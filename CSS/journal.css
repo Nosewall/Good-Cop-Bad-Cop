@@ -1,0 +1,21 @@
+#journal-mainbody{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+#journal-maintop{
+    margin-top: 10vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: auto;
+    flex-grow: 1;
+}
+#journal-mainbot{
+    margin-top: auto;
+    align-content: center;   
+}
+#journal-form{
+    margin-top: 1vh;
+    margin-left: 3%;
+    margin-right: 3%;
+}
