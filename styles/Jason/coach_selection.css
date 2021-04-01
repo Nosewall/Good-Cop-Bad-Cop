@@ -2,12 +2,6 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
-<<<<<<< HEAD
-=======
-  row-gap: 1vh;
-  margin-top: 40px;
-  margin-left: 50px;
->>>>>>> 06c52b0f8f52a4b5c56805e1c3fca5747a8a02fc
 }
 
 .image img {

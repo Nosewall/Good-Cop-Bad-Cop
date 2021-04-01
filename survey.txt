@@ -1,0 +1,41 @@
+Scenario 1: You've been procrastinating on doing an assignment for a few days.
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
+
+Scenario 2: You just got back a quiz and did a lot worse than you expected to.
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
+
+Scenario 3: You finished a project a few days ahead of schedule.
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
+
+Scenario 4: It's been a week since you opened the app.
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
+
+Scenario 5: 
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
+
+Scenario 6:
+Feedback:
+Positive 1:
+Positive 2:
+Negative 1:
+Negative 2:
