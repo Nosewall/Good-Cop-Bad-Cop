@@ -1,27 +1,33 @@
-function defaultDate() {
-    let today = new Date().toISOString().substr(0, 10);
-    document.querySelector("#journal-date").value = today;
-}
 
+// Writes journal entry to firestore DB
 function writeJournal() {
+    // Adds listener to save button
     document.getElementById("save").addEventListener('click', function () {
         firebase.auth().onAuthStateChanged(function (user) {
 
+            // Grabs form data and stores as local variable
             var entry = document.getElementById("journal-entry").value;
-            var jDate = document.getElementById("journal-date").value;
-            console.log(entry);
-            console.log(jDate);
+            var entryTitle = document.getElementById("journal-title").value;
+            var entryMood = document.getElementById("journal-mood").value;
+            console.log(entryMood);
+            // Gets Date
+            var entryDate = new Date();
+            // Writes data to DB
             if (user) {
                 var journalEntry = db.collection("users")
                 .doc(user.uid).collection("journal entries");
 
                 journalEntry.add({
-                    date: jDate,
-                    jText: entry,
+                    date: entryDate,
+                    title: entryTitle,
+                    journalText: entry,
+                    mood: entryMood,
                 });
+            } else {
+                // no user
             }
         })
     });
 }
-defaultDate();
+
 writeJournal();
