@@ -31,9 +31,10 @@
 .button{
   width: 80px;
   height: 40px;
-  text-align: center;
-  margin: auto;
+  margin: 10px auto 0px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 8px;
   padding-bottom: 8px;
   background-color: rgb(43, 43, 219);  
