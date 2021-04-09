@@ -75,7 +75,7 @@
         <!--------------------------------------------------------------------->
         <!-- JS files: Your own JavaScript functions included here    -->
         <!--------------------------------------------------------------------->
-        <script src="../JAVASCRIPT/FireBase_API.js"></script>
+        <script src="../scripts/FireBase_API.js"></script>
         <script src="../JAVASCRIPT/notificationHandler.js"></script>
 
         <script>
@@ -93,6 +93,10 @@
                                 email: user.email                          //with authenticated user's ID (user.uid)
                             }).then(function () {
                                 console.log("New user added to firestore");
+                                db.collection("users").doc(user.uid).collection("goals").set({
+
+                                });
+                                console.log("New goals collection added for user.");
                                 window.location.assign("landing.html");       //re-direct to landing.html after signup
                             })
                                 .catch(function (error) {
