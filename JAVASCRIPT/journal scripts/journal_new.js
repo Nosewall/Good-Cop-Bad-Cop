@@ -24,6 +24,8 @@ function writeJournal() {
                     title: entryTitle,
                     journalText: entry,
                     mood: entryMood,
+                }).then(function () {
+                    window.location.assign("journal_success.html");
                 });
                 
             } else {
@@ -31,10 +33,6 @@ function writeJournal() {
             }
         })
     });
-}
-
-function journalSuccess(){
-    window.location.href="journal_success.html"
 }
 
 writeJournal();
