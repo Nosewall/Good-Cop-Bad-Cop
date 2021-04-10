@@ -11,8 +11,7 @@ function getGoals() {
           var t = doc.data().title;
           // grabs the id of the goal
           var id = doc.id;
-          var goalButton = "<button></button>";
-          goalButton.innerHTML = t; //Set the button title to the goal title
+          var goalButton = "<button>" + t + "</button>";
           goalsDiv.appendChild(goalButton);
 
         })
@@ -20,6 +19,19 @@ function getGoals() {
   })
 }
 
-function newGoal() {
+function addStep() {
+  var stepDiv = document.getElementById("stepsDiv");
+  var textBox = document.createElement("input");
+  textBox.type = "text";
+  textBox.class = "stepBox";
+  stepDiv.appendChild(textBox);
 
+}
+
+function newGoal() {
+  window.location.replace("new_goal.html");
+}
+
+function submitGoal() {
+  window.location.replace("goals.html");
 }
