@@ -23,7 +23,7 @@ function addStep() {
   var stepDiv = document.getElementById("stepsDiv");
   var textBox = document.createElement("input");
   textBox.type = "text";
-  textBox.class = "stepBox";
+  textBox.className = "stepBox";
   stepDiv.appendChild(textBox);
 
 }
@@ -33,5 +33,21 @@ function newGoal() {
 }
 
 function submitGoal() {
+  var goalName = document.getElementById("goalName").nodeValue;
+  var all = document.getElementsByTagName("*");
+  for (var i = 0, max = all.length; i < max; i++) { //Get all elements on the page and loop through them
+    if (all[i].className == "stepBox") {
+      firebase.auth().onAuthStateChanged(function (user) {
+        db.collection("users").doc(user.uid)
+          .collection("goals").doc(goalName)
+          .set({
+            step: all[i],
+          });
+      })
+    }
+  }
+}
+
+function cancelGoal() {
   window.location.replace("goals.html");
 }
