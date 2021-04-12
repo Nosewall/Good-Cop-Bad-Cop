@@ -1,0 +1,21 @@
+#journal-goes-here{
+    margin-top: 7%;
+}
+
+#journal-goes-here h1{
+    margin-left: 5%;
+    font-size: 30pt;
+}
+
+#journal-goes-here h2{
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 14pt;
+}
+
+#journal-goes-here p{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 12pt;
+}

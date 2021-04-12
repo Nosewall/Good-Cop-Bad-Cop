@@ -19,3 +19,22 @@
     margin-left: 3%;
     margin-right: 3%;
 }
+
+#go-to-archive{
+    font-size: 20pt;
+    background-color: #00BCD4;
+}
+
+#journal-success{
+    margin-top: 10vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: auto;
+    flex-grow: 1;
+    font-size: 40pt;
+    text-align: center;
+}
+
+#archive-back{
+    margin-bottom: 3%;
+}

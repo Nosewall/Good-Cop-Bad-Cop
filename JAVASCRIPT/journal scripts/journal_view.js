@@ -19,7 +19,10 @@ function displayJournal() {
             // creates content with data
             $("#journal-goes-here").append("<h1>" + title + "</h1>")
             $("#journal-goes-here").append("<h1>" + date + "</h1>")
-            $("#journal-goes-here").append("<h2>" + mood + "</h2>")
+            // Only populates mood if user entered a mood.
+            if (mood != "") {
+                $("#journal-goes-here").append("<h2>Mood: " + mood + "</h2>")
+            }
             $("#journal-goes-here").append("<p>" + journalText + "</p>")
         })
     })
