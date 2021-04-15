@@ -35,6 +35,9 @@ function confirmCoach() {
                 db.collection("users").doc(user.uid)
                 .update({
                     selectedCoach: newCoach
+                }).then(function () {
+                    // Redirects user after saving new coach
+                    window.location.assign("settings.html");
                 });                
                 
             } else {
