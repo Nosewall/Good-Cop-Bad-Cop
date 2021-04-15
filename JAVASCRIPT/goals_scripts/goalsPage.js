@@ -82,10 +82,11 @@ function submitGoal() {
           }
         }
       }
-      )
+      ).then(function () {
+        window.location.assign("./goals.html");
+      });
     }
   })
-  redirectToGoals();
 }
 
 function redirectToGoals() {
