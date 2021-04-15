@@ -54,7 +54,11 @@ function submitGoal() {
       // no user
     }
   })
+  submitSteps();
 
+}
+
+function submitSteps() {
   //Add steps to firebase
   firebase.auth().onAuthStateChanged(function (user) {
 
@@ -63,17 +67,24 @@ function submitGoal() {
     var allSteps = stepsDiv.childNodes;
     var index = 0;
     console.log("Stepcount - " + stepCount);
-    while (index < stepCount.length) {
+    console.log(index < stepCount);
+    while (index < stepCount) {
+      console.log("In the while loop");
+      console.log(allSteps[index]);
+      console.log(allSteps[index].value);
+      console.log(typeof (allSteps[index]));
+      console.log(typeof (allSteps[index].value));
+      var stepToAdd = allSteps[index].value;
+      index++;
       if (user) {
         var newGoal = db.collection("users")
           .doc(user.uid).collection("goals");
 
         newGoal.add({
-          step: allSteps[index].Value,
+          step: stepToAdd,
 
         }).then(function () {
-          console.log("Steps added to firebase");
-          window.location.replace("goals.html");
+          console.log("Step added to firebase");
         });
 
       } else {
