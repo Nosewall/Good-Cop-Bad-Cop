@@ -18,6 +18,7 @@ function getGoals() {
         })
       })
   })
+  
 }
 
 function addStep() {
