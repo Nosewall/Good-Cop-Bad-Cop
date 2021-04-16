@@ -6,17 +6,8 @@
   margin-left: 50px;
 }
 
-.image img {
-  cursor: pointer;
-}
-
 .image img:hover {
-  border: solid 2px #1e88e5;
-  border-radius: 2px;
-}
-
-.image #mother img:hover {
-  border: solid 2px #1e88e5;
+  border: solid 2px black;
   border-radius: 2px;
 }
 
@@ -26,6 +17,7 @@
   text-align: center;
   padding: 10px;
   margin-left: 30%;
+  cursor: pointer;
 }
 
 .button{
@@ -52,4 +44,20 @@
 .button > span{
   color: #eeeeee;
   text-align: center;
+}
+
+#dog-button {
+  background-color: white;
+}
+
+#mother-button {
+  background-color: white;
+}
+
+#soldier-button {
+  background-color: white;
+}
+
+#teacher-button {
+  background-color: white;
 }
