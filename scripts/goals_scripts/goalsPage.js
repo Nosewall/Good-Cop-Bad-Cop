@@ -31,7 +31,6 @@ function addStep() {
   textBox.type = "text";
   textBox.className = "stepBox";
   stepDiv.appendChild(textBox);
-
 }
 
 function newGoal() {
@@ -48,35 +47,25 @@ function submitGoal() {
     if (user) {
       var newGoal = db.collection("users")
         .doc(user.uid).collection("goals");
-
       newGoal.add({
         Name: goalName,
-
+        //Now the goal is added to firebase, and we create a subcollection for all steps on the page.
       }).then(function (newGoal) {
         console.log("Goal added to firebase by name");
         var stepsDiv = document.getElementById("stepsDiv");
         var stepCount = document.getElementById("stepsDiv").childElementCount;
         var allSteps = stepsDiv.childNodes;
         var index = 0;
-        console.log("Stepcount - " + stepCount);
-        console.log(index < stepCount);
         while (index < stepCount) {
-          console.log("In the while loop");
           var stepToAdd = allSteps[index].value;
           index++;
-          console.log("Trying to add " + stepToAdd);
-          console.log(typeof (stepToAdd));
           if (user) {
             var newSteps = newGoal.collection("steps");
-
             newSteps.add({
               step: stepToAdd,
-
             }).then(function () {
               console.log("Step added to firebase");
-
             });
-
           } else {
             // no user
           }
@@ -88,42 +77,6 @@ function submitGoal() {
     }
   })
 }
-function submitSteps(documentId) {
-  //Add steps to firebase
-  firebase.auth().onAuthStateChanged(function (user) {
-
-    var stepsDiv = document.getElementById("stepsDiv");
-    var stepCount = document.getElementById("stepsDiv").childElementCount;
-    var allSteps = stepsDiv.childNodes;
-    var index = 0;
-    console.log("Stepcount - " + stepCount);
-    console.log(index < stepCount);
-    while (index < stepCount) {
-      console.log("In the while loop");
-      console.log(allSteps[index]);
-      console.log(allSteps[index].value);
-      console.log(typeof (allSteps[index]));
-      console.log(typeof (allSteps[index].value));
-      var stepToAdd = allSteps[index].value;
-      index++;
-      if (user) {
-        var newSteps = db.collection("users")
-          .doc(user.uid).collection("goals")
-          .doc("steps");
-
-        newSteps.add({
-          step: stepToAdd,
-
-        }).then(function () {
-          console.log("Step added to firebase");
-        });
-
-      } else {
-        // no user
-      }
-    }
-  })
-}
 
 function getGoalInfo() {
   // Assign variables for the document.
@@ -132,19 +85,27 @@ function getGoalInfo() {
   const parsedUrl = new URL(window.location.href);
   var id = parsedUrl.searchParams.get("id");
   //Get the collection of steps and the goal name.
-  var goalsCollection = db.collection("users")
-    .doc(user.uid)
-    .collection("goals")
-    .doc(id)
-    .get();
-  var goalName = db.collection("users")
-    .doc(user.uid)
-    .collection("goals")
-    .doc(id)
-    .getParent()
-    .Name;
-  console.log(goalName);
-
+  var user = firebase.auth().onAuthStateChanged(function (user) {
+    db.collection("users")
+      .doc(user.uid)
+      .collection("goals")
+      .doc(id)
+      .collection("steps")
+      .get()
+      .then(function (snap) {
+        //For each document in the goal collection, add clickable steps to the page.
+        snap.forEach(function (doc) {
+          var step = doc.data().step;
+          var stepDiv = document.getElementById("eachStepDiv");
+          var stepBox = document.createElement("button");
+          stepBox.innerHTML = step;
+          stepBox.addEventListener("click", function () {
+            phrase = getPhrase("Carol", "checkIn1")
+          });
+          stepDiv.appendChild(stepBox);
+        });
+      });
+  });
 }
 
 function cancelGoal() {
