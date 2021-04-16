@@ -9,3 +9,37 @@
   padding: 5px;
   
 }
+
+#viewStepsDiv{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#goalsDiv {
+  width: 70%;
+  color:red;
+}
+
+#eachStepDiv{
+  text-align: center;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+}
+
+#eachStepDiv button{
+  background-color: rgb(69, 214, 224);
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#backButton{
+  background-color: rgb(238, 77, 77);
+  margin-top: 10px;
+  padding: 10px;
+}
