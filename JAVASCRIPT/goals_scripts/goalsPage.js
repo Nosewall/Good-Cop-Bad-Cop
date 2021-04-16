@@ -13,16 +13,21 @@ function getGoals() {
           var id = doc.id;
           var goalButton = document.createElement("button");
           goalButton.innerHTML = t;
-          goalButton.onclick = "toNewGoalPage()";
+
+          // goalButton.onclick = "toNewGoalPage()";
+          goalButton.addEventListener("click", function () {
+            window.location.replace("goal_view.html?id=" + id);
+          });
           goalsDiv.appendChild(goalButton);
+
 
         })
       })
   })
 }
 
-function toNewGoalPage() {
-
+function toNewGoalPage(id) {
+  window.location.replace("goal_view.html");
 }
 
 function addStep() {
@@ -131,7 +136,34 @@ function submitSteps(documentId) {
 }
 
 function getGoalInfo() {
+  // Assign variables for the document.
+  var header = document.getElementById("goalViewHeader");
 
+  const parsedUrl = new URL(window.location.href);
+  var id = parsedUrl.searchParams.get("id");
+  //Get the collection of steps and the goal name.
+  var user = firebase.auth().onAuthStateChanged(function (user) {
+    db.collection("users")
+      .doc(user.uid)
+      .collection("goals")
+      .doc(id)
+      .collection("steps")
+      .get()
+      .then(function (snap) {
+        snap.forEach(function (doc) {
+          var step = doc.data().step;
+
+          var stepDiv = document.getElementById("eachStepDiv");
+          var stepBox = document.createElement("button");
+          stepBox.innerHTML = step;
+          stepBox.addEventListener("click", function () {
+            stepBox.display = "none";
+            phrase = getPhrase("Decard", "checkIn1")
+          });
+          stepDiv.appendChild(stepBox);
+        });
+      });
+  });
 }
 
 function cancelGoal() {

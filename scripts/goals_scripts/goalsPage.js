@@ -13,12 +13,16 @@ function getGoals() {
           var id = doc.id;
           var goalButton = document.createElement("button");
           goalButton.innerHTML = t;
+
+          goalButton.addEventListener("click", function () {
+            window.location.replace("goal_view.html?id=" + id);
+          });
           goalsDiv.appendChild(goalButton);
 
         })
       })
   })
-  
+
 }
 
 function addStep() {
@@ -79,7 +83,7 @@ function submitGoal() {
         }
       }
       ).then(function () {
-          window.location.assign("./goals.html");
+        window.location.assign("./goals.html");
       });
     }
   })
@@ -122,6 +126,24 @@ function submitSteps(documentId) {
 }
 
 function getGoalInfo() {
+  // Assign variables for the document.
+  var header = document.getElementById("goalViewHeader");
+
+  const parsedUrl = new URL(window.location.href);
+  var id = parsedUrl.searchParams.get("id");
+  //Get the collection of steps and the goal name.
+  var goalsCollection = db.collection("users")
+    .doc(user.uid)
+    .collection("goals")
+    .doc(id)
+    .get();
+  var goalName = db.collection("users")
+    .doc(user.uid)
+    .collection("goals")
+    .doc(id)
+    .getParent()
+    .Name;
+  console.log(goalName);
 
 }
 
