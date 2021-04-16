@@ -1,9 +1,11 @@
 .image {
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
-  margin-top: 40px;
-  margin-left: 50px;
+  grid-template-rows: auto;
+  row-gap: 4px;
+  margin: auto;
+  margin-top: 2vh;
 }
 
 .image img:hover {
@@ -11,19 +13,28 @@
   border-radius: 2px;
 }
 
-.image img {
-  width: 100px;
-  height: 100px;
+.trainer-container {
   text-align: center;
-  padding: 10px;
-  margin-left: 30%;
+}
+
+.trainer-btn {
+  width: 75%;
+  margin: auto;
+}
+
+.trainer-btn img {
+  width: 95%;
+  max-width: 200px;
+  text-align: center;
+  margin-left: auto;
   cursor: pointer;
 }
 
 .button{
-  width: 80px;
-  height: 40px;
+  width: 30%;
+  height: 8vh;
   margin: 10px auto 0px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,27 +48,13 @@
 .button:hover{
    background-color: #242424;
 }
-.button:active{
-   background-color: #121212;
-}
 
-.button > span{
+#button-confirm{
   color: #eeeeee;
   text-align: center;
+  font-size: 20pt;
 }
 
-#dog-button {
-  background-color: white;
-}
-
-#mother-button {
-  background-color: white;
-}
-
-#soldier-button {
-  background-color: white;
-}
-
-#teacher-button {
+.trainer-btn  {
   background-color: white;
 }
