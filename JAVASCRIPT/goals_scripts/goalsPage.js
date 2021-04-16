@@ -157,8 +157,7 @@ function getGoalInfo() {
           var stepBox = document.createElement("button");
           stepBox.innerHTML = step;
           stepBox.addEventListener("click", function () {
-            stepBox.display = "none";
-            phrase = getPhrase("Decard", "checkIn1")
+            phrase = getPhrase("Carol", "checkIn1")
           });
           stepDiv.appendChild(stepBox);
         });

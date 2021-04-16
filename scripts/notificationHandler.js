@@ -26,6 +26,7 @@ function getPhrase(trainerName, motivation) {
             console.log(snapshot);
             var phrase = snapshot.data()[motivation];
             alert(phrase);
+
         })
 
 
